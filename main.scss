@@ -1,0 +1,143 @@
+* { margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great|Monoton|Pacifico&display=swap');
+body {
+
+  .menu{
+    background-color: black;
+    color: #fafafa;
+    padding: 50px;
+    
+
+    .item {
+      padding: 10px;
+    }
+  }
+
+  
+  font-family: 'Fredericka the Great', cursive;
+  
+  color: aqua;
+  background-image: linear-gradient(left, aqua, rgb(8, 171, 235));
+  
+    
+
+    &:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background: rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+}
+
+
+
+
+svg {
+  width: 80vw;
+  position: fixed;
+  top: 70vh;
+  left: 50vw;
+  max-width: 430px;
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 2;
+  filter: drop-shadow(0 0 40px rgba(0, 0, 0, 0.3));
+
+  path {
+      cursor: pointer;
+      animation: blob 2s infinite forwards;
+      transform-origin: 50% 50%;
+
+      &:hover {
+          fill: #fafafa;
+      }
+      
+  }
+
+  text {
+      font-size: 45px;
+  }
+}
+
+@keyframes blob {
+  25% {
+      d: path(
+          "M 90 210 C 90 180 110 160 130 160 C 160 160 180 140 200 130 C 230 120 270 100 290 140 C 310 170 340 100 360 140 C 370 160 390 180 390 210 C 390 240 380 290 350 280 C 330 270 300 280 280 290 C 260 300 230 300 220 290 C 200 270 160 310 140 280 C 130 260 90 240 90 210 "
+      );
+      transform: rotate(-5deg);
+  }
+  50% {
+      d: path(
+          "M 90 210 C 90 180 100 150 120 130 C 150 100 180 140 200 130 C 230 120 270 100 290 140 C 300 160 330 130 360 140 C 390 150 390 180 390 210 C 390 240 380 300 350 280 C 330 270 320 230 280 260 C 260 280 220 310 200 290 C 180 270 160 280 140 280 C 110 280 90 240 90 210"
+      );
+  }
+  75% {
+      d: path(
+          "M 90 210 C 90 180 110 180 130 170 C 150 160 170 130 200 130 C 240 130 260 150 290 140 C 310 130 340 120 360 140 C 380 160 390 180 390 210 C 390 240 380 260 350 270 C 320 280 290 270 270 260 C 240 250 230 280 210 290 C 180 310 130 300 110 280 C 90 260 90 240 90 210"
+      );
+      transform: rotate(5deg);
+  }
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
